@@ -13,7 +13,8 @@ defmodule Gryplanszowe do
 
   """
   def get_games do
-    # http://www.gryplanszowe24.pl/639-gry-planszowe
+    HTTPoison.get!("http://www.gryplanszowe24.pl/639-gry-planszowe").body
+    |> parse
     # get http content
     # parse http content
     # make domain models
@@ -23,6 +24,10 @@ defmodule Gryplanszowe do
     # make worker for each page
     # add supervisor
     # think about caching
+    
+  end
+
+  def parse(html) do
     []
   end
 end
