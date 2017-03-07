@@ -8,11 +8,11 @@ defmodule Gryplanszowe do
 
   ## Examples
 
-      iex> Gryplanszowe.hello
-      :world
+      iex> Gryplanszowe.get_games
+      []
 
   """
-  def hello do
-    :world
+  def get_games do
+    []
   end
 end
