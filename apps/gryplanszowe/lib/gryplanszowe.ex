@@ -1,6 +1,6 @@
-defmodule BoardGamePlatform do
+defmodule Gryplanszowe do
   @moduledoc """
-  Documentation for BoardGamePlatform.
+  Documentation for Gryplanszowe.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule BoardGamePlatform do
 
   ## Examples
 
-      iex> BoardGamePlatform.hello
+      iex> Gryplanszowe.hello
       :world
 
   """

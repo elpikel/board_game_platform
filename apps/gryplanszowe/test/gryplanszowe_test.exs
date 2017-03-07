@@ -1,6 +1,6 @@
-defmodule BoardGamePlatformTest do
+defmodule GryplanszoweTest do
   use ExUnit.Case
-  doctest BoardGamePlatform
+  doctest Gryplanszowe
 
   test "the truth" do
     assert 1 + 1 == 2
