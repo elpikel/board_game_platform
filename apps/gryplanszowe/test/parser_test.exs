@@ -79,7 +79,7 @@ defmodule Gryplanszowe.ParserTest do
 						<a href=\"http://www.gryplanszowe24.pl/gry-planszowe/7161-cluedo-5010993346677.html\" title=\"Cluedo\" style=\"display: inline-block;\">Cluedo</a>
 					</h2>
 					<p class=\"product_desc\">
-													Gra dla 3-6 osób. Rewelacyjna zabawa! Kiedy spotka się więcej osób (4-6), nabiera fantastycznego klimatu - naprawdę można mieć trudności w odgadnięciu kto jest zbrodniarzem. Dzięki dobrej grze aktorskiej i zimnym nerwom można wszystkich wyprowadzić&nbsp;w pole!&#65279;
+													Gra dla 3-6 osób. Rewelacyjna zabawa!
 											</p>
 									</div>
 				<div id=\"cennik\">
@@ -105,5 +105,7 @@ defmodule Gryplanszowe.ParserTest do
   test "should parse html to product" do
     product = Gryplanszowe.Parser.convert_to_product(@html_product)
     assert product.title == "Cluedo"
+    assert product.description == "Gra dla 3-6 osób. Rewelacyjna zabawa!"
+    assert product.price == 105.9
   end
 end

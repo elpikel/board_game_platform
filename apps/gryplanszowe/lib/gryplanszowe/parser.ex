@@ -18,7 +18,9 @@ defmodule Gryplanszowe.Parser do
 
   def convert_to_product(html_product) do
     %Gryplanszowe.Product{
-      title: get_title(html_product)
+      title: get_title(html_product),
+      description: get_description(html_product),
+      price: get_price(html_product)
     }
   end
 
@@ -26,5 +28,25 @@ defmodule Gryplanszowe.Parser do
     html_product
     |> Floki.find("h2")
     |> Floki.text
+    |> String.trim
+  end
+
+  def get_description(html_product) do
+    html_product
+    |> Floki.find(".product_desc")
+    |> Floki.text
+    |> String.trim
+  end
+
+  def get_price(html_product) do
+    price = html_product
+    |> Floki.find(".price")
+    |> Floki.text
+    |> String.trim
+
+    Enum.at(Regex.run(~r/[0-9]+[\,]*[0-9]*/, price), 0)
+    |> String.replace(",", ".")
+    |> Float.parse
+    |> elem(0)
   end
 end

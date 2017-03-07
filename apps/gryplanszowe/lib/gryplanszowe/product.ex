@@ -1,3 +1,3 @@
 defmodule Gryplanszowe.Product do
-  defstruct title: ""
+  defstruct title: "", description: "", price: 0.0
 end
