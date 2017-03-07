@@ -20,7 +20,9 @@ defmodule Gryplanszowe.Parser do
     %Gryplanszowe.Product{
       title: get_title(html_product),
       description: get_description(html_product),
-      price: get_price(html_product)
+      price: get_price(html_product),
+      image: get_image(html_product),
+      url: get_url(html_product)
     }
   end
 
@@ -48,5 +50,13 @@ defmodule Gryplanszowe.Parser do
     |> String.replace(",", ".")
     |> Float.parse
     |> elem(0)
+  end
+
+  def get_image(html_product) do
+    ""
+  end
+
+  def get_url(html_product) do
+    ""
   end
 end
