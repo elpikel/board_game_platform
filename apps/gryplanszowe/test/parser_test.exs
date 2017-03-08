@@ -1,4 +1,4 @@
-defmodule Gryplanszowe.ParserTest do
+defmodule Gryplanszowe24.ParserTest do
   use ExUnit.Case
     @html "\n\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">\n
 <html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"pl\">
@@ -98,12 +98,12 @@ defmodule Gryplanszowe.ParserTest do
 		</li>"
 
   test "should parse html into products" do
-    products = Gryplanszowe.Parser.parse(@html)
+    products = Gryplanszowe24.Parser.parse(@html)
     assert Enum.count(products) == 36
   end
 
   test "should parse html to product" do
-    product = Gryplanszowe.Parser.convert_to_product(@html_product)
+    product = Gryplanszowe24.Parser.convert_to_product(@html_product)
     assert product.title == "Cluedo"
     assert product.description == "Gra dla 3-6 osób. Rewelacyjna zabawa!"
     assert product.price == 105.9

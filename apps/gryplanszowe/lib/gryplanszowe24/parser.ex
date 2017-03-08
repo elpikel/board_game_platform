@@ -1,4 +1,4 @@
-defmodule Gryplanszowe.Parser do
+defmodule Gryplanszowe24.Parser do
   def parse(html) do
     html
     |> get_products_html
@@ -17,7 +17,7 @@ defmodule Gryplanszowe.Parser do
   end
 
   def convert_to_product(html_product) do
-    %Gryplanszowe.Product{
+    %Gryplanszowe24.Product{
       title: get_title(html_product),
       description: get_description(html_product),
       price: get_price(html_product),

@@ -1,4 +1,4 @@
-defmodule Gryplanszowe do
+defmodule Gryplanszowe24 do
   @moduledoc """
   Documentation for Gryplanszowe.
   """
@@ -8,7 +8,7 @@ defmodule Gryplanszowe do
 
   ## Examples
 
-      iex> Gryplanszowe.get_games
+      iex> Gryplanszowe24.get_games
       []
 
   """
@@ -24,7 +24,7 @@ defmodule Gryplanszowe do
     # make worker for each page
     # add supervisor
     # think about caching
-    
+
   end
 
   def parse(html) do
