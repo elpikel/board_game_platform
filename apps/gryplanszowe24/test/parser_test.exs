@@ -107,5 +107,7 @@ defmodule Gryplanszowe24.ParserTest do
     assert product.title == "Cluedo"
     assert product.description == "Gra dla 3-6 osób. Rewelacyjna zabawa!"
     assert product.price == 105.9
+    assert product.url == "http://www.gryplanszowe24.pl/gry-planszowe/7161-cluedo-5010993346677.html"
+    assert product.image == "http://www.gryplanszowe24.pl/7161-7849-home/cluedo.jpg"
   end
 end

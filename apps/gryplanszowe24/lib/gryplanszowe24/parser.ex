@@ -53,10 +53,18 @@ defmodule Gryplanszowe24.Parser do
   end
 
   def get_image(html_product) do
-    ""
+    html_product
+    |> Floki.find(".product_img_link")
+    |> Floki.find("img")
+    |> Floki.attribute("src")
+    |> Enum.at(0)
   end
 
   def get_url(html_product) do
-    ""
+    html_product
+    |> Floki.find("#toppro")
+    |> Floki.find("a")
+    |> Floki.attribute("href")
+    |> Enum.at(0)
   end
 end
