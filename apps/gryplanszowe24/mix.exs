@@ -1,4 +1,4 @@
-defmodule Gryplanszowe.Mixfile do
+defmodule Gryplanszowe24.Mixfile do
   use Mix.Project
 
   def project do
