@@ -4,7 +4,7 @@ defmodule Gryplanszowe24.PageTraveler do
     download_page.(url)
     |> get_number_of_pages
     |> create_page_range
-    |> Enum.map(&parse_page(&1, download_page))
+    |> Gryplanszowe24.Paraller.pmap(&parse_page(&1, download_page))
     |> Enum.concat
   end
 
