@@ -8,7 +8,7 @@ defmodule Gryplanszowe24.ProductsPages do
     |> Enum.concat
   end
 
-  def parse_page(page_number, download_page) do
+  defp parse_page(page_number, download_page) do
     products_page_url = "http://www.gryplanszowe24.pl/639-gry-planszowe?p=#{page_number}"
     products_page = download_page.(products_page_url)
 

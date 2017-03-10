@@ -9,21 +9,21 @@ defmodule Gryplanszowe24.ProductHtml do
     }
   end
 
-  def get_title(product_html) do
+  defp get_title(product_html) do
     product_html
     |> Floki.find("h2")
     |> Floki.text
     |> String.trim
   end
 
-  def get_description(product_html) do
+  defp get_description(product_html) do
     product_html
     |> Floki.find(".product_desc")
     |> Floki.text
     |> String.trim
   end
 
-  def get_price(product_html) do
+  defp get_price(product_html) do
     price_html = product_html
     |> Floki.find(".price")
     |> Floki.text
@@ -37,7 +37,7 @@ defmodule Gryplanszowe24.ProductHtml do
     |> elem(0)
   end
 
-  def get_image(product_html) do
+  defp get_image(product_html) do
     product_html
     |> Floki.find(".product_img_link")
     |> Floki.find("img")
@@ -45,7 +45,7 @@ defmodule Gryplanszowe24.ProductHtml do
     |> Enum.at(0)
   end
 
-  def get_url(product_html) do
+  defp get_url(product_html) do
     product_html
     |> Floki.find("#toppro")
     |> Floki.find("a")
