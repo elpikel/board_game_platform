@@ -24,12 +24,14 @@ defmodule Gryplanszowe24.ProductHtml do
   end
 
   def get_price(product_html) do
-    price = product_html
+    price_html = product_html
     |> Floki.find(".price")
     |> Floki.text
     |> String.trim
 
-    Enum.at(Regex.run(~r/[0-9]+[\,]*[0-9]*/, price), 0)
+    price = Enum.at(Regex.run(~r/[0-9]+[\,]*[0-9]*/, price_html), 0)
+
+    price
     |> String.replace(",", ".")
     |> Float.parse
     |> elem(0)

@@ -4,7 +4,9 @@ defmodule Gryplanszowe24.ProductsPage do
     |> Floki.find(".pagination")
     |> Floki.find("li")
 
-    Enum.drop(page_numbers, Enum.count(page_numbers) - 2)
+    last_number_html = Enum.drop(page_numbers, Enum.count(page_numbers) - 2)
+
+    last_number_html
     |> Enum.take(1)
     |> Floki.find("a")
     |> Floki.text
