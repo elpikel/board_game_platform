@@ -1,4 +1,10 @@
 defmodule Gryplanszowe24.ProductHtml do
+  @moduledoc """
+    Gryplanszowe24.ProductHtml is used to build products out of html
+    representations of it form GryPlanszowe24 site
+  """
+
+  @spec get_product(String.t) :: GryPlanszowe24.Product.t
   def get_product(product_html) do
     %Gryplanszowe24.Product{
       title: get_title(product_html),

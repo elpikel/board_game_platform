@@ -1,4 +1,9 @@
 defmodule Gryplanszowe24.ProductsPage do
+  @moduledoc """
+    Abstraction over products page of Gryplanszowe24 site.
+  """
+  
+  @spec get_page_range(String.t) :: [integer]
   def get_page_range(products_page) do
     page_numbers = products_page
     |> Floki.find(".pagination")
@@ -15,6 +20,7 @@ defmodule Gryplanszowe24.ProductsPage do
     |> create_page_range
   end
 
+  @spec get_products(String.t) :: [Gryplanszowe24.Product.t]
   def get_products(products_page) do
     products_page
     |> get_products_html

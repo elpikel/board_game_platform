@@ -1,4 +1,9 @@
 defmodule Gryplanszowe24.ProductsPages do
+  @moduledoc """
+    Provides basic functionality for product pages parsing
+  """
+
+  @spec get_products(String.t, (String.t -> String.t)) :: [GryPlanszowe24.Product.t]
   def get_products(url, download_page) do
     products_page = download_page.(url)
 

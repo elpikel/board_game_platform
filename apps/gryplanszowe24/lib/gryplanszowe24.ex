@@ -24,8 +24,4 @@ defmodule Gryplanszowe24 do
     # think about caching
     []
   end
-
-  def parse(html) do
-    []
-  end
 end
