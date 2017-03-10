@@ -1,4 +1,4 @@
-defmodule Gryplanszowe24.PageTravelerTest do
+defmodule Gryplanszowe24.ProductsPagesTest do
   use ExUnit.Case
 
   @html "\n\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">\n
@@ -69,14 +69,8 @@ defmodule Gryplanszowe24.PageTravelerTest do
 </body>\n
 </html>\n"
 
-  test "should get page count" do
-    number_of_pages = Gryplanszowe24.PageTraveler.get_number_of_pages(@html)
-
-    assert number_of_pages == 11
-  end
-
   test "should get products from all pages" do
-    products = Gryplanszowe24.PageTraveler.parse_every_page("http://www.gryplanszowe24.pl/639-gry-planszowe", fn(_url) -> @html end)
+    products = Gryplanszowe24.ProductsPages.get_products("http://www.gryplanszowe24.pl/639-gry-planszowe", fn(_url) -> @html end)
 
     assert Enum.count(products) == 396
   end
