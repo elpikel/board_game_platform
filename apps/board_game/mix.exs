@@ -1,8 +1,8 @@
-defmodule Gryplanszowe24.Mixfile do
+defmodule BoardGame.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :gryplanszowe24,
+    [app: :board_game,
      version: "0.1.0",
      build_path: "../../_build",
      config_path: "../../config/config.exs",
@@ -19,7 +19,8 @@ defmodule Gryplanszowe24.Mixfile do
   # Type "mix help compile.app" for more information
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
-    [extra_applications: [:logger, :httpoison, :floki]]
+    [extra_applications: [:logger],
+     mod: {BoardGame.Application, []}]
   end
 
   # Dependencies can be Hex packages:
@@ -37,8 +38,8 @@ defmodule Gryplanszowe24.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:httpoison, "~> 0.10.0"},{:floki, "~> 0.14.0"},
-      {:board_game, in_umbrella: true}
+      {:postgrex, ">= 0.0.0"},
+      {:ecto, "~> 2.1"}
     ]
   end
 end

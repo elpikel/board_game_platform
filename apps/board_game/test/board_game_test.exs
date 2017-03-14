@@ -1,18 +1,18 @@
-defmodule Gryplanszowe24Test do
+defmodule BoardGameTest do
   use ExUnit.Case
   use ExUnit.Case, async: true
-  doctest Gryplanszowe24
+  doctest BoardGame
 
   setup do
     # Explicitly get a connection before each test
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(BoardGame.Repo)
   end
 
-  test "should get page" do
-    Gryplanszowe24.update_products
+  test "should save products" do
+    BoardGame.update_products([%BoardGame.Product{title: "test"}])
 
     products = BoardGame.Repo.all(BoardGame.Product)
 
-    assert Enum.count(products) == 401
+    assert Enum.count(products) == 1
   end
 end
