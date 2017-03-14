@@ -4,9 +4,9 @@ defmodule Gryplanszowe24.ProductHtml do
     representations of it form GryPlanszowe24 site
   """
 
-  @spec get_product(String.t) :: GryPlanszowe24.Product.t
+  @spec get_product(String.t) :: %BoardGame.Product{}
   def get_product(product_html) do
-    %Gryplanszowe24.Product{
+    %BoardGame.Product{
       title: get_title(product_html),
       description: get_description(product_html),
       price: get_price(product_html),
