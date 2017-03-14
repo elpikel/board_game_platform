@@ -10,5 +10,6 @@ defmodule BoardGame.Product do
     field :price, :float
     field :image, :string
     field :url, :string
+    timestamps()
   end
 end

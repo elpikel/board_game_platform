@@ -1,18 +1,13 @@
 defmodule BoardGame do
   @moduledoc """
-  Documentation for BoardGame.
+    Documentation for BoardGame.
   """
 
   @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> BoardGame.hello
-      :world
-
+    update_gryplanszowe24.
   """
-  def hello do
-    :world
+  def update_products(products) do
+    products
+    |> Enum.each(fn(product) -> BoardGame.Repo.insert(product) end)
   end
 end
