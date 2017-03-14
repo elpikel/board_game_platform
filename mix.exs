@@ -22,7 +22,8 @@ defmodule BoardGamePlatform.Mixfile do
   # and cannot be accessed from applications inside the apps folder
   defp deps do
     [
-      {:httpoison, "~> 0.10.0"},{:floki, "~> 0.14.0"},
+      {:httpoison, "~> 0.10.0"},
+      {:floki, "~> 0.14.0"},
       {:credo, "~> 0.5", only: [:dev, :test]}
     ]
   end

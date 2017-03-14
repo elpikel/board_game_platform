@@ -1,7 +1,14 @@
-defmodule Gryplanszowe24.Product do
+defmodule BoardGame.Product do
   @moduledoc """
     Represents board game
   """
-  defstruct title: "", description: "", price: 0.0, image: "", url: ""
-  @type t :: %Gryplanszowe24.Product{title: String.t, description: String.t, price: float, image: String.t, url: String.t}
+  use Ecto.Schema
+
+  schema "products" do
+   field :title,    :string
+   field :description, :string
+   field :price, :float
+   field :image, :string
+   field :url, :string
+  end
 end
