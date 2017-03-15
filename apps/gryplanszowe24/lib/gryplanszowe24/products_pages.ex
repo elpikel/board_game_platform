@@ -6,7 +6,7 @@ defmodule Gryplanszowe24.ProductsPages do
   @spec get_products(String.t, (String.t -> String.t)) :: [%BoardGame.Product{}]
   def get_products(url, download_page) do
     products_page = download_page.(url)
-
+    
     products_page
     |> Gryplanszowe24.ProductsPage.get_page_range
     |> Gryplanszowe24.Paraller.pmap(&parse_page(&1, download_page))
