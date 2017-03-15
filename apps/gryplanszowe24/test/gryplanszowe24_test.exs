@@ -9,7 +9,8 @@ defmodule Gryplanszowe24Test do
   end
 
   test "should get page" do
-    Gryplanszowe24.update_products
+    Gryplanszowe24.start_link
+    Gryplanszowe24.handle_cast(:update_products, "")
 
     products = BoardGame.Repo.all(BoardGame.Product)
 

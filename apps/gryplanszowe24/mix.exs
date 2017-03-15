@@ -19,7 +19,7 @@ defmodule Gryplanszowe24.Mixfile do
   # Type "mix help compile.app" for more information
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
-    [extra_applications: [:logger, :httpoison, :floki]]
+    [extra_applications: [:logger, :httpoison, :floki, :timex]]
   end
 
   # Dependencies can be Hex packages:
@@ -38,7 +38,8 @@ defmodule Gryplanszowe24.Mixfile do
   defp deps do
     [
       {:httpoison, "~> 0.10.0"},{:floki, "~> 0.14.0"},
-      {:board_game, in_umbrella: true}
+      {:board_game, in_umbrella: true},
+      {:timex, "~> 3.0"}
     ]
   end
 end
