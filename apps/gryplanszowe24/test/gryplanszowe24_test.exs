@@ -1,6 +1,8 @@
 defmodule Gryplanszowe24Test do
   use ExUnit.Case
   use ExUnit.Case, async: true
+  use Timex
+
   doctest Gryplanszowe24
 
   setup do
@@ -10,7 +12,7 @@ defmodule Gryplanszowe24Test do
 
   test "should get page" do
     Gryplanszowe24.start_link
-    Gryplanszowe24.handle_cast(:update_products, "")
+    Gryplanszowe24.handle_cast(:update_products, Timex.shift(Timex.now, minutes: -5))
 
     products = BoardGame.Repo.all(BoardGame.Product)
 

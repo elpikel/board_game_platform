@@ -26,15 +26,13 @@ defmodule Gryplanszowe24 do
     {:reply, products, last_update}
   end
 
-  def handle_cast(:update_products, last_update) do # use state for cache? or last call datetime
+  def handle_cast(:update_products, last_update) do
     should_update = Timex.before?(Timex.shift(last_update, minutes: 5), Timex.now)
 
     cond do
       should_update ->
         IO.puts "update"
-        products = Gryplanszowe24.ProductsPages.get_products(
-                    "http://www.gryplanszowe24.pl/639-gry-planszowe",
-                    &Gryplanszowe24.PageDownloader.download_page/1)
+        products =  GenServer.call(__MODULE__, :get_products)
         BoardGame.update_products(products)
         {:noreply, Timex.now}
       true ->
