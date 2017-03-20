@@ -18,21 +18,13 @@ defmodule BoardGameWeb.Web do
 
   def model do
     quote do
-      use Ecto.Schema
-
-      import Ecto
-      import Ecto.Changeset
-      import Ecto.Query
+      # Define common model functionality
     end
   end
 
   def controller do
     quote do
       use Phoenix.Controller
-
-      alias BoardGameWeb.Repo
-      import Ecto
-      import Ecto.Query
 
       import BoardGameWeb.Router.Helpers
       import BoardGameWeb.Gettext
@@ -64,10 +56,6 @@ defmodule BoardGameWeb.Web do
   def channel do
     quote do
       use Phoenix.Channel
-
-      alias BoardGameWeb.Repo
-      import Ecto
-      import Ecto.Query
       import BoardGameWeb.Gettext
     end
   end

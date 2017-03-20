@@ -20,11 +20,6 @@ defmodule BoardGameWeb.ChannelCase do
       # Import conveniences for testing with channels
       use Phoenix.ChannelTest
 
-      alias BoardGameWeb.Repo
-      import Ecto
-      import Ecto.Changeset
-      import Ecto.Query
-
 
       # The default endpoint for testing
       @endpoint BoardGameWeb.Endpoint
@@ -32,11 +27,6 @@ defmodule BoardGameWeb.ChannelCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(BoardGameWeb.Repo)
-
-    unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(BoardGameWeb.Repo, {:shared, self()})
-    end
 
     :ok
   end

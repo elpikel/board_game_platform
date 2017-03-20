@@ -36,7 +36,7 @@ defmodule BoardGameWeb.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_board_game_web_key",
-    signing_salt: "sXAE5leI"
+    signing_salt: "KcqvQjSG"
 
   plug BoardGameWeb.Router
 end

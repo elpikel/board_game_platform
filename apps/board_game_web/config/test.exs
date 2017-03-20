@@ -8,12 +8,3 @@ config :board_game_web, BoardGameWeb.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
-
-# Configure your database
-config :board_game_web, BoardGameWeb.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "board_game_web_test",
-  hostname: "localhost",
-  pool: Ecto.Adapters.SQL.Sandbox

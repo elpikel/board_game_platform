@@ -5,14 +5,10 @@
 # is restricted to this project.
 use Mix.Config
 
-# General application configuration
-config :board_game_web,
-  ecto_repos: [BoardGameWeb.Repo]
-
 # Configures the endpoint
 config :board_game_web, BoardGameWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "MKNklixohpzGMem92P//ZcprdZJ8yDOl/mce0qJdVe4IeXkCF8tDIRol/fkTL+3H",
+  secret_key_base: "/wQHaTUroMa/+6Sa1JeoCtCOzcKV0BS4rMVsegk9ly7oZ+KECTud0+CPryrH4U7z",
   render_errors: [view: BoardGameWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: BoardGameWeb.PubSub,
            adapter: Phoenix.PubSub.PG2]
