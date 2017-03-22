@@ -31,12 +31,10 @@ defmodule Gryplanszowe24 do
 
     cond do
       should_update ->
-        IO.puts "update"
         products =  GenServer.call(__MODULE__, :get_products)
         BoardGame.update_products(products)
         {:noreply, Timex.now}
       true ->
-        IO.puts "do nothing"
         {:noreply, last_update}
     end
 

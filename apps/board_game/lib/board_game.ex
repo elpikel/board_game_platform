@@ -10,4 +10,8 @@ defmodule BoardGame do
     products
     |> Enum.each(fn(product) -> BoardGame.Repo.insert(product) end)
   end
+
+  def get_products do
+    BoardGame.Repo.all(BoardGame.Product)
+  end
 end

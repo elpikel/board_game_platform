@@ -16,6 +16,6 @@ defmodule Gryplanszowe24Test do
 
     products = BoardGame.Repo.all(BoardGame.Product)
 
-    assert Enum.count(products) == 401
+    assert Enum.count(products) == 418
   end
 end
