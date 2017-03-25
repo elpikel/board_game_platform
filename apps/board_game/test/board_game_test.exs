@@ -1,5 +1,4 @@
 defmodule BoardGameTest do
-  use ExUnit.Case
   use ExUnit.Case, async: true
   doctest BoardGame
 

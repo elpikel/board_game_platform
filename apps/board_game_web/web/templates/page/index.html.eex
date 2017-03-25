@@ -1,0 +1,28 @@
+<div class="col-md-9">
+    <div class="row">
+      <%= for product <- @products do %>
+        <p></p>
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <img src="<%= product.image %>" alt="">
+                <div class="caption">
+                    <h4 class="pull-right"><%= product.price %></h4>
+                    <h4><a href="<%= product.url %>"><%= product.title %></a>
+                    </h4>
+                    <p><%= product.description %></p>
+                </div>
+                <div class="ratings">
+                    <p class="pull-right">15 reviews</p>
+                    <p>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+      <% end %>
+    </div>
+</div>

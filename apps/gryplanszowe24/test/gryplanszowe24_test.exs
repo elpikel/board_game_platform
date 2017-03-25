@@ -11,6 +11,8 @@ defmodule Gryplanszowe24Test do
   end
 
   test "should get page" do
+    BoardGame.Repo.delete_all(BoardGame.Product)
+
     Gryplanszowe24.start_link
     Gryplanszowe24.handle_cast(:update_products, Timex.shift(Timex.now, minutes: -5))
 

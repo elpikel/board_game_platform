@@ -19,6 +19,18 @@ defmodule Gryplanszowe24 do
     GenServer.call(__MODULE__, :get_products)
   end
 
+  def get_categories do
+    GenServer.call(__MODULE__, :get_categories)
+  end
+
+  def handle_call(:get_categories, _from, last_update) do
+    categories = Gryplanszowe24.CategoriesPage.get_categories(
+    "http://www.gryplanszowe24.pl/639-gry-planszowe",
+    &Gryplanszowe24.PageDownloader.download_page/1)
+
+    {:reply, categories, last_update}
+  end
+
   def handle_call(:get_products, _from, last_update) do
     products = Gryplanszowe24.ProductsPages.get_products(
                 "http://www.gryplanszowe24.pl/639-gry-planszowe",
