@@ -9,9 +9,21 @@ defmodule BoardGameTest do
   end
 
   test "should save products" do
+    BoardGame.Repo.delete_all(BoardGame.Product)
     BoardGame.update_products([%BoardGame.Product{title: "test"}])
 
     products = BoardGame.Repo.all(BoardGame.Product)
+
+    assert Enum.count(products) == 1
+  end
+
+  test "should filter products by description and name" do
+    BoardGame.update_products([
+      %BoardGame.Product{title: "title", description: "description"},
+      %BoardGame.Product{title: "ttt", description: "xxx"}
+      ])
+
+    products = BoardGame.get_products("xxx")
 
     assert Enum.count(products) == 1
   end

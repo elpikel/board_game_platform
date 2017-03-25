@@ -16,7 +16,8 @@ defmodule BoardGameWeb.Router do
   scope "/", BoardGameWeb do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", ProductController, :index
+    #post "/search", ProductController, :search
   end
 
   # Other scopes may use custom stacks.
