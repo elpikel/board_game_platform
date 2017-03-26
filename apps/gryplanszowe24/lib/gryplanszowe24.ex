@@ -15,6 +15,10 @@ defmodule Gryplanszowe24 do
     GenServer.cast(__MODULE__, :update_products)
   end
 
+  def update_categories do
+    GenServer.cast(__MODULE__, :update_categories)
+  end
+
   def get_products do
     GenServer.call(__MODULE__, :get_products)
   end
@@ -53,5 +57,15 @@ defmodule Gryplanszowe24 do
     # make worker for each page
     # add supervisor
     # think about caching
+  end
+
+  def handle_cast(:update_categories, last_update) do
+    categories = Gryplanszowe24.CategoriesPage.get_categories(
+    "http://www.gryplanszowe24.pl/639-gry-planszowe",
+    &Gryplanszowe24.PageDownloader.download_page/1)
+
+    BoardGame.update_categories(categories)
+
+    {:noreply, last_update}
   end
 end
