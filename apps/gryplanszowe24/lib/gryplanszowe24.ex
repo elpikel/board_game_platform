@@ -47,7 +47,9 @@ defmodule Gryplanszowe24 do
 
     cond do
       should_update ->
-        products =  GenServer.call(__MODULE__, :get_products)
+        products = Gryplanszowe24.ProductsPages.get_products(
+                    "http://www.gryplanszowe24.pl/639-gry-planszowe",
+                    &Gryplanszowe24.PageDownloader.download_page/1)
         BoardGame.update_products(products)
         {:noreply, Timex.now}
       true ->
