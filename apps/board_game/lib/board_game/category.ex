@@ -7,6 +7,7 @@ defmodule BoardGame.Category do
 
   schema "category" do
     field :name, :string
+    has_many :products, BoardGame.Product
     timestamps()
   end
 

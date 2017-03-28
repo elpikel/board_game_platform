@@ -1,46 +1,54 @@
-<div class="col-md-9">
-    <div class="row">
-      <div class="col-md-6">
-          <%= form_for @conn, product_path(@conn, :index), [as: :filter, method: :get], fn f -> %>
-          <div id="custom-search-input">
-              <div class="input-group col-md-12">
-
-                  <%= text_input f, :search, class: "form-control input-lg", placeholder: "Wyszukaj produkt" %>
-                  <span class="input-group-btn">
-                      <button class="btn btn-info btn-lg" type="submit">
-                          <i class="glyphicon glyphicon-search"></i>
-                      </button>
-                  </span>
-
-              </div>
-          </div>
-          <% end %>
-      </div>
+<div class="row">
+    <div class="col-md-3">
+        <div class="list-group">
+            <%= for category <- @categories do %>
+              <a href="#" class="list-group-item"><%= category.name %></a>
+            <% end %>
+        </div>
     </div>
-    <div class="row">
-      <%= for product <- @products do %>
-        <p></p>
-        <div class="col-sm-4 col-lg-4 col-md-4">
-            <div class="thumbnail">
-                <img src="<%= product.image %>" alt="">
-                <div class="caption">
-                    <h4 class="pull-right"><%= product.price %></h4>
-                    <h4><a href="<%= product.url %>"><%= product.title %></a>
-                    </h4>
-                    <p><%= product.description %></p>
-                </div>
-                <div class="ratings">
-                    <p class="pull-right">15 reviews</p>
-                    <p>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                    </p>
+    <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-6">
+              <%= form_for @conn, product_path(@conn, :index), [as: :filter, method: :get], fn f -> %>
+              <div id="custom-search-input">
+                  <div class="input-group col-md-12">
+                      <%= text_input f, :search, class: "form-control input-lg", placeholder: "Wyszukaj produkt" %>
+                      <span class="input-group-btn">
+                          <button class="btn btn-info btn-lg" type="submit">
+                              <i class="glyphicon glyphicon-search"></i>
+                          </button>
+                      </span>
+
+                  </div>
+              </div>
+              <% end %>
+          </div>
+        </div>
+        <div class="row">
+          <%= for product <- @products do %>
+            <p></p>
+            <div class="col-sm-4 col-lg-4 col-md-4">
+                <div class="thumbnail">
+                    <img src="<%= product.image %>" alt="">
+                    <div class="caption">
+                        <h4 class="pull-right"><%= product.price %></h4>
+                        <h4><a href="<%= product.url %>"><%= product.title %></a>
+                        </h4>
+                        <p><%= product.description %></p>
+                    </div>
+                    <div class="ratings">
+                        <p class="pull-right">15 reviews</p>
+                        <p>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                        </p>
+                    </div>
                 </div>
             </div>
+          <% end %>
         </div>
-      <% end %>
     </div>
 </div>

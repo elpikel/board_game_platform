@@ -4,13 +4,14 @@ defmodule BoardGame.Product do
   """
   use Ecto.Schema
   import Ecto.Changeset
-  
+
   schema "product" do
     field :title, :string
     field :description, :string
     field :price, :float
     field :image, :string
     field :url, :string
+    belongs_to :category, BoardGame.Category
     timestamps()
   end
 

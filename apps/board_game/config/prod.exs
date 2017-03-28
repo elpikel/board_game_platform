@@ -1,9 +1,7 @@
 use Mix.Config
 
 config :board_game, BoardGame.Repo,
-  pool: Ecto.Adapters.SQL.Sandbox,
   adapter: Ecto.Adapters.Postgres,
-  database: "board_game_repo",
-  username: "arpl",
-  password: "",
-  hostname: "localhost"
+  url: System.get_env("DATABASE_URL"),
+  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
+  ssl: true

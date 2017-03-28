@@ -3,11 +3,15 @@ defmodule BoardGameWeb.ProductController do
 
   def index(conn, %{"filter" => %{"search" => search_text}}) do
     products = BoardGame.get_products(search_text)
-    render conn, "index.html", products: products
+    categories = BoardGame.get_categories()
+
+    render conn, "index.html", products: products, categories: categories
   end
 
   def index(conn, _params) do
     products = BoardGame.get_all_products()
-    render conn, "index.html", products: products
+    categories = BoardGame.get_categories()
+
+    render conn, "index.html", products: products, categories: categories
   end
 end

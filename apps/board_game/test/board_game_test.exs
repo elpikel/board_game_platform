@@ -26,4 +26,12 @@ defmodule BoardGameTest do
 
     assert Enum.count(products) == 1
   end
+
+  test "should save categories" do
+    BoardGame.update_categories([%BoardGame.Category{name: "cat 1"}, %BoardGame.Category{name: "cat 2"}])
+
+    categories = BoardGame.get_categories()
+
+    assert Enum.count(categories) == 2
+  end
 end

@@ -12,6 +12,15 @@ defmodule BoardGame do
     |> Enum.each(fn(product) -> BoardGame.Repo.insert(product) end)
   end
 
+  def update_categories(categories) do
+    categories
+    |> Enum.each(fn(category) -> BoardGame.Repo.insert(category) end)
+  end
+
+  def get_categories() do
+    BoardGame.Repo.all(BoardGame.Category)
+  end
+
   def get_products search_text do
     BoardGame.Repo.all(
       from product in BoardGame.Product,

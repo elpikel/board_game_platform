@@ -36,14 +36,7 @@
     </nav>
     <!-- Page Content -->
     <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="list-group">
-                    <a href="#" class="list-group-item">Category 1</a>
-                </div>
-            </div>
-            <%= render @view_module, @view_template, assigns %>
-        </div>
+      <%= render @view_module, @view_template, assigns %>
     </div>
     <!-- /.container -->
     <div class="container">
