@@ -5,6 +5,8 @@
 # is restricted to this project.
 use Mix.Config
 
+config :board_game_web, ecto_repos: []
+
 # Configures the endpoint
 config :board_game_web, BoardGameWeb.Endpoint,
   url: [host: "localhost"],

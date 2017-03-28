@@ -1,5 +1,4 @@
 defmodule Gryplanszowe24Test do
-  use ExUnit.Case
   use ExUnit.Case, async: true
   use Timex
 
