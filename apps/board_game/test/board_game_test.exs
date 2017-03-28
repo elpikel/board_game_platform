@@ -28,6 +28,8 @@ defmodule BoardGameTest do
   end
 
   test "should save categories" do
+    BoardGame.Repo.delete_all(BoardGame.Category)
+
     BoardGame.update_categories([%BoardGame.Category{name: "cat 1"}, %BoardGame.Category{name: "cat 2"}])
 
     categories = BoardGame.get_categories()
