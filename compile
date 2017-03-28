@@ -1,3 +1,0 @@
-# apps/bank_web (default)
-brunch build --production
-mix phoenix.digest
